@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Diet Plan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Age: {{ age }}</h2>
+    <h2>BMI: {{ bmi }}</h2>
+    <h2>Category: {{ category }}</h2>
+
+    <h3>Breakfast</h3>
+    <ul>{% for item in day_plan.breakfast %}<li>{{ item }}</li>{% endfor %}</ul>
+
+    <h3>Lunch</h3>
+    <ul>{% for item in day_plan.lunch %}<li>{{ item }}</li>{% endfor %}</ul>
+
+    <h3>Snacks</h3>
+    <ul>{% for item in day_plan.snacks %}<li>{{ item }}</li>{% endfor %}</ul>
+
+    <h3>Dinner</h3>
+    <ul>{% for item in day_plan.dinner %}<li>{{ item }}</li>{% endfor %}</ul>
+
+    <a href="/">Start Over</a>
+  </div>
+</body>
+</html>
